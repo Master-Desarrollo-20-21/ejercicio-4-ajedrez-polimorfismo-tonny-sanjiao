@@ -1,0 +1,46 @@
+@startuml Chess
+class Chess{
+    +play()
+}
+    Chess *-down- "2" Player
+    Chess *-down- Board
+    
+    
+class Board{
+    
+}
+    
+    Board *-down- "64" Square
+    
+    
+class Square
+    Square -down- Color
+    
+class Player
+    Player -down- Color
+    Player *-down- "16" Piece
+
+class Color
+    Color <|-down- White
+    Color <|-down- Black
+    
+    
+class Piece
+    Piece -down- Color
+    Piece <|-down- "8" Pawn
+    Piece <|-down- "2" Rook
+    Piece <|-down- "2" Knight
+    Piece <|-down- "2" Bishop
+    Piece <|-down- "1" Queen
+    Piece <|-down- "1" King
+
+class Pawn
+class Rook
+class Knight
+class Bishop
+class Queen
+class King
+class White
+class Black
+
+@enduml
